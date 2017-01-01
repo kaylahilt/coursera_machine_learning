@@ -16,18 +16,15 @@ for iter = 1:num_iters
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
     %
+    
+    H = X * theta; % hypothesis function
+    theta = theta - (alpha / m) * (X' * (H - y));
 
-
-
-
-
-
+    J_history(iter,1) = computeCost(X, y, theta)
 
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
-
-end
 
 end
